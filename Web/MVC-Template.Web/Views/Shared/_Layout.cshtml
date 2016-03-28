@@ -1,0 +1,41 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>MVC-Template</title>
+    @Styles.Render("~/Content/css")
+</head>
+<body>
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#!">
+                @Html.ActionLink("Logo", "Index", "Home", new { area = "" }, new { @class = "brand-logo" })
+            </a>
+            <ul class="side-nav right" id="mobile-demo">
+                <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" })</li>
+                <li><a class="dropdown-button" href="#!" data-activates="eventsMenuMobile">Trips<i class="material-icons right">arrow_drop_down</i></a></li>
+                <li>@Html.ActionLink("Contact", "Contact", "Home", new { area = "" })</li>
+                <li><a class="dropdown-button" href="#!" data-activates="adminMenuMobile">Admin<i class="material-icons right">arrow_drop_down</i></a></li>
+                @*@Html.Partial("_LoginPartial")*@
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <div class="body-content">
+            <div class="container">
+                @RenderBody()
+            </div>
+        </div>
+    </main>
+    <footer class="page-footer">
+        <div class="footer-copyright center">
+            <p>&copy; @DateTime.Now.Year</p>
+        </div>
+    </footer>
+</body>
+</html>
